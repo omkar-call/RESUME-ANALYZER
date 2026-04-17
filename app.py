@@ -45,16 +45,16 @@ if uploaded_file is not None:
             found_skills.append(skill)
 
     # Show results
-    st.subheader("✅ Skills Found:")
+    st.subheader(" Skills Found:")
     st.write(found_skills)
 
-    st.subheader("❌ Skills Missing:")
+    st.subheader(" Skills Missing:")
     missing_skills = list(set(skills_list) - set(found_skills))
     st.write(missing_skills)
 
     # Score
     score = (len(found_skills) / len(skills_list)) * 100
-    st.subheader("📊 Resume Score:")
+    st.subheader(" Resume Score:")
     st.write(str(round(score, 2)) + "%")
 
     job_role = st.selectbox("Select Job Role",
