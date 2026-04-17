@@ -21,6 +21,16 @@ if uploaded_file is not None:
 
     text = text.lower()
 
+    
+
+    # Extract clean entities
+    entities = []
+
+    
+
+    # Remove duplicates
+    entities = list(set(entities))
+
     # Load skills.csv
     skills_df = pd.read_csv("skills.csv")
 
@@ -53,7 +63,7 @@ if uploaded_file is not None:
     if job_role == "Data Scientist":
         required_skills = ["python", "machine learning", "sql", "pandas", "numpy"]
     else:
-        required_skills = ["html", "css", "javascript"]
+        required_skills = ["html", "css", "javascript", "java", "python", "C"]
 
     found_skills = []
 
@@ -71,3 +81,4 @@ if uploaded_file is not None:
         skills_df = pd.read_csv("skills.csv")
     else:
         print("skills.csv is empty or missing")
+
