@@ -4,7 +4,7 @@ import pandas as pd
 import os
 from transformers import pipeline
 
-st.title("📄 Resume Analyzer")
+st.title("Resume Analyzer")
 
 uploaded_file = st.file_uploader("Upload your resume", type=["pdf"])
 
@@ -49,7 +49,7 @@ if uploaded_file is not None:
 
     entities = list(set(entities))
 
-    st.subheader("🧠 Named Entities Found")
+    st.subheader("Named Entities Found")
 
     person_entities = [entity[1] for entity in entities if entity[0] == "PER"]
     org_entities = [entity[1] for entity in entities if entity[0] == "ORG"]
@@ -75,15 +75,15 @@ if uploaded_file is not None:
 
     missing_skills = list(set(skills_list) - set(found_skills))
 
-    st.subheader("✅ Skills Found")
+    st.subheader(" Skills Found")
     st.write(found_skills)
 
-    st.subheader("❌ Skills Missing")
+    st.subheader(" Skills Missing")
     st.write(missing_skills)
 
     score = (len(found_skills) / len(skills_list)) * 100
 
-    st.subheader("📊 Resume Score")
+    st.subheader(" Resume Score")
     st.write(f"{round(score, 2)}%")
 
     job_role = st.selectbox(
@@ -121,7 +121,7 @@ if uploaded_file is not None:
 
     role_score = (len(role_found_skills) / len(required_skills)) * 100
 
-    st.subheader(f"🎯 {job_role} Skill Match")
+    st.subheader(f" {job_role} Skill Match")
 
     st.write("Matched Skills:")
     st.write(role_found_skills)
